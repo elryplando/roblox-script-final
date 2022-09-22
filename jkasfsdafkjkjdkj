@@ -1,4 +1,4 @@
-    wait (6)
+    wait (4)
 
     game.StarterGui:SetCore("SendNotification",  {
         Title = "Done Loading";
@@ -10,7 +10,9 @@
         Callback = NotificationBindable;
     })
 
-    wait (5)
+    local wait(2)
+
+
     local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
     local Window = Library.CreateLib("Fun GUI", "Ocean")
         -- MAIN
