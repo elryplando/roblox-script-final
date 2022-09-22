@@ -1,0 +1,73 @@
+    wait (6)
+
+    game.StarterGui:SetCore("SendNotification",  {
+        Title = "Done Loading";
+        Text = "Have fun";
+        Icon = "";
+        Duration = 5;
+        Button1 = "Thanks!";
+        Button2 = "Okay!";
+        Callback = NotificationBindable;
+    })
+
+    
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+    local Window = Library.CreateLib("Fun GUI", "Ocean")
+        -- MAIN
+        local Main = Window:NewTab("Main")
+        local MainSection = Main:NewSection("Main")
+
+        MainSection:NewToggle("SuperHuman", "SuperHuman", function(state)
+            if state then
+                game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 120
+                game.Players.LocalPlayer.Character.Humanoid.JumpPower = 120
+            else
+                game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+                game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+            end
+        end)
+
+        MainSection:NewButton("Infinite Yield", "FE Admin Commands", function()
+            loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+        end)
+
+        MainSection:NewButton("Vynixu Script", "A script for mm2", function()
+            loadstring(game:GetObjects("rbxassetid://4001118261")[1].Source)()
+        end)
+
+        MainSection:NewToggle("WalkSpeed", "Makes you go faster", function(state)
+            if state then
+                game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 120
+            else
+                game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+            end
+        end)
+    
+        MainSection:NewToggle("JumpPower", "Makes you jump higher", function(state)
+        if state then
+            game.Players.LocalPlayer.Character.Humanoid.JumpPower = 120
+        else
+            game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+        end
+    end)
+    
+    MainSection:NewButton("Fly (X)", "Join SWAGMODE first", function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/22kristina/swag/main/admin_fly'))()
+    end)
+        
+        local Main = Window:NewTab("Other")
+        local Section = Main:NewSection("Sliders")
+
+        Section:NewSlider("WalkSpeed", "WalkSpeed", 500, 16, function(s) -- 500 (MaxValue) | 0 (MinValue)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+    end)
+
+    Section:NewSlider("JumpPower", "JumpPower", 500, 50, function(s) -- 500 (MaxValue) | 0 (MinValue)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+    end)
+
+    local Section = Main:NewSection("R6")
+
+    Section:NewButton("Back/Front Flip (R6)", "Makes you do gymnastics", function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/7wDcPtLk'))()
+    end)
